@@ -65,7 +65,12 @@ public class Restaurant {
         return name;
     }
 
+    public int total_amount_of_selected_items(ArrayList listofitems) {
+        int totalAmount=0;
 
+
+        return totalAmount;
+    }
 
 
 }

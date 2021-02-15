@@ -87,5 +87,17 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
+    public void giving_the_names_of_items_in_strings_must_return_cost_of_the_total(){
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
+        restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Chicken Burger",250);
+        ArrayList<Item> itemsToBill = new ArrayList<Item>();
+        itemsToBill.add(restaurant.getMenu().get(0));
+        itemsToBill.add(restaurant.getMenu().get(2));
+        int total=restaurant.total_amount_of_selected_items(itemsToBill);
+        assertEquals(total,369);
+    }
 }
