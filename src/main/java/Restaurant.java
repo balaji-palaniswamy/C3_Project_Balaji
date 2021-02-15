@@ -65,13 +65,14 @@ public class Restaurant {
         return name;
     }
 
-    public int total_amount_of_selected_items(ArrayList listofitems) {
+    public int total_amount_of_selected_items(ArrayList<Item> list) {
         int totalAmount=0;
-
+        for (Item item : list){
+            totalAmount = totalAmount + item.getPrice();
+        }
 
         return totalAmount;
     }
-
 
 }
 
